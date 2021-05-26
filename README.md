@@ -12,7 +12,7 @@
 資料檢驗模式
 
 ## HttpContext
-存取Session裡的JSON物件
+存取Session裡的JSON物件，於本方案用作存取購物車物件
 
 ## Dependency Injection
 解決兩個類別間耦合性過高的問題
