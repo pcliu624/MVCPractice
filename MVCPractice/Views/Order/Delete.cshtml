@@ -1,0 +1,74 @@
+﻿@model MVCPractice.Models.ViewModel.OrderDetailsVM
+<form method="post" asp-action="DeletePost">
+<input asp-for="Order.Id" hidden />
+<div class="border p-3">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group row">
+        <h2 class="text-info pl-3">Delete</h2>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Order.Id"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Order.Id" class="form-control" disabled />
+                    <span asp-validation-for="Order.Id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="OrderDetails.Product.Name"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="OrderDetails.Product.Name" class="form-control" disabled />
+                    <span asp-validation-for="OrderDetails.Product.Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="OrderDetails.Quantity"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="OrderDetails.Quantity" class="form-control" disabled />
+                    <span asp-validation-for="OrderDetails.Quantity" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="OrderDetails.Total"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="OrderDetails.Total" class="form-control" disabled />
+                    <span asp-validation-for="OrderDetails.Total" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Order.ApplicationUser.FullName"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Order.ApplicationUser.FullName" class="form-control" disabled />
+                    <span asp-validation-for="Order.ApplicationUser.FullName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-8 offset-4 row">
+                    <div class="col">
+                        <input type="submit" class="btn btn-primary w-100" value="Delete" />
+                    </div>
+                    <div class="col">
+                        <a asp-action="Index" asp-controller="Order" class="btn btn-danger w-100">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</form>
+@section Scripts{ @{
+        <partial name="_ValidationScriptsPartial" />
+}
+}

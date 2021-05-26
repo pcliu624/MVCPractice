@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MVCPractice.Models.Product>
+<div class="container">
+    <div class="row">
+        <div class="col-6">Product List</div>
+        <div class="col-6">
+            <a class="btn btn-info" asp-action="Upsert" asp-controller="Product">Add Product</a>
+        </div>
+
+    </div>
+    <br />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td width="20%">@obj.Id</td>
+                        <td width="20%">@obj.Name</td>
+                        <td width="20%">@obj.Price</td>
+                        <td width="20%">@obj.Category.Name</td>
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-action="Upsert" asp-route-id="@obj.Id" class="btn btn-primary">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
